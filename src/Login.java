@@ -60,10 +60,10 @@ public class Login extends JFrame {
 		lblPass.setBounds(370, 333, 121, 18);
 		contentPane.add(lblPass);
 		
-		JLabel lblAdmin = new JLabel("USERNAME :");
+		JLabel lblAdmin = new JLabel("ADMIN :");
 		lblAdmin.setForeground(new Color(0, 0, 0));
 		lblAdmin.setFont(new Font("Century Gothic", Font.BOLD, 15));
-		lblAdmin.setBounds(374, 288, 99, 18);
+		lblAdmin.setBounds(401, 288, 68, 18);
 		contentPane.add(lblAdmin);
 		
 		user = new JTextField();

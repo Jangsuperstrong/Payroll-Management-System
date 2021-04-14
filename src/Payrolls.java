@@ -28,6 +28,10 @@ import javax.swing.SwingConstants;
 import java.awt.Color;
 import javax.swing.UIManager;
 import javax.swing.ImageIcon;
+import javax.swing.JPopupMenu;
+import java.awt.Component;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class Payrolls {
 
@@ -102,7 +106,7 @@ public class Payrolls {
 					txtEmployeeNo.setText(sRef);
 			}
 		});
-		getFrame().setBounds(0, 0, 1370, 800);
+		getFrame().setBounds(0, 0, 1288, 750);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getFrame().getContentPane().setLayout(null);
 		
@@ -824,6 +828,9 @@ public class Payrolls {
 		lblNewLabel_4.setBounds(37, 11, 170, 149);
 		getFrame().getContentPane().add(lblNewLabel_4);
 		
+		JPopupMenu popupMenu = new JPopupMenu();
+		addPopup(lblNewLabel_4, popupMenu);
+		
 		
 	}
 
@@ -833,5 +840,22 @@ public class Payrolls {
 
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
+	}
+	private static void addPopup(Component component, final JPopupMenu popup) {
+		component.addMouseListener(new MouseAdapter() {
+			public void mousePressed(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			public void mouseReleased(MouseEvent e) {
+				if (e.isPopupTrigger()) {
+					showMenu(e);
+				}
+			}
+			private void showMenu(MouseEvent e) {
+				popup.show(e.getComponent(), e.getX(), e.getY());
+			}
+		});
 	}
 }

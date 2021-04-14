@@ -1,15 +1,18 @@
-import java.awt.BorderLayout;
+
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -20,6 +23,7 @@ public class Login extends JFrame {
 	private JPanel contentPane;
 	private JTextField user;
 	private JPasswordField pass;
+	
 
 	/**
 	 * Launch the application.
@@ -42,7 +46,7 @@ public class Login extends JFrame {
 	 */
 	public Login() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 1009, 576);
 		contentPane = new JPanel();
 		contentPane.setForeground(new Color(0, 0, 102));
 		contentPane.setBackground(new Color(255, 255, 204));
@@ -51,22 +55,26 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblPass = new JLabel("PASSWORD :");
-		lblPass.setFont(new Font("Viner Hand ITC", Font.BOLD, 14));
-		lblPass.setBounds(66, 134, 121, 18);
+		lblPass.setForeground(new Color(0, 0, 0));
+		lblPass.setFont(new Font("Century Gothic", Font.BOLD, 15));
+		lblPass.setBounds(370, 333, 121, 18);
 		contentPane.add(lblPass);
 		
 		JLabel lblAdmin = new JLabel("ADMIN :");
-		lblAdmin.setFont(new Font("Viner Hand ITC", Font.BOLD, 14));
-		lblAdmin.setBounds(102, 89, 68, 18);
+		lblAdmin.setForeground(new Color(0, 0, 0));
+		lblAdmin.setFont(new Font("Century Gothic", Font.BOLD, 15));
+		lblAdmin.setBounds(401, 288, 68, 18);
 		contentPane.add(lblAdmin);
 		
 		user = new JTextField();
-		user.setBounds(178, 78, 184, 29);
+		user.setFont(new Font("Century Gothic", Font.PLAIN, 15));
+		user.setBounds(483, 283, 184, 29);
 		contentPane.add(user);
 		user.setColumns(10);
 		
 		pass = new JPasswordField();
-		pass.setBounds(178, 123, 184, 29);
+		pass.setFont(new Font("Century Gothic", Font.PLAIN, 15));
+		pass.setBounds(483, 328, 184, 29);
 		contentPane.add(pass);
 		
 		JButton btnLogin = new JButton("LOGIN");
@@ -86,10 +94,30 @@ public class Login extends JFrame {
 				}
 			}
 		});
-		btnLogin.setFont(new Font("Viner Hand ITC", Font.BOLD, 14));
-		btnLogin.setBounds(199, 173, 127, 29);
+		btnLogin.setFont(new Font("Century Gothic", Font.BOLD, 15));
+		btnLogin.setBounds(449, 380, 151, 29);
 		contentPane.add(btnLogin);
 		
+		JLabel lblLogo = new JLabel("");
+		lblLogo.setBackground(new Color(102, 153, 204));
+		lblLogo.setIcon(new ImageIcon("C:\\Users\\CLIENT\\git\\payroll\\src\\Pms\\img\\g4LogoS.png"));
+		lblLogo.setBounds(421, 59, 219, 237);
+		contentPane.add(lblLogo);
+		
+		
+		
+		JLabel lblBorder = new JLabel("");
+		Border border = new LineBorder(Color.ORANGE, 4, true);
+		lblBorder.setBorder(new LineBorder(new Color(255, 255, 255), 2, true));
+		lblBorder.setBounds(329, 59, 395, 404);
+		contentPane.add(lblBorder);	    
+		
+		
+		JLabel lblBackImg = new JLabel("");
+		lblBackImg.setIcon(new ImageIcon("C:\\Users\\CLIENT\\git\\payroll\\src\\Pms\\img\\back.png"));
+		lblBackImg.setBounds(0, 0, 1000, 552);
+		contentPane.add(lblBackImg);
+			
 	
 	}
 }

@@ -1,4 +1,3 @@
-
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -10,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.Color;
 import javax.swing.JTextField;
 import javax.swing.ImageIcon;
@@ -17,12 +17,14 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JPasswordField;
+import javax.swing.JSlider;
 
 public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField user;
 	private JPasswordField pass;
+	private JPanel label;
 	
 
 	/**
@@ -55,13 +57,13 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblPass = new JLabel("PASSWORD :");
-		lblPass.setForeground(new Color(0, 0, 0));
+		lblPass.setForeground(new Color(255, 255, 255));
 		lblPass.setFont(new Font("Century Gothic", Font.BOLD, 15));
 		lblPass.setBounds(370, 333, 121, 18);
 		contentPane.add(lblPass);
 		
 		JLabel lblAdmin = new JLabel("ADMIN :");
-		lblAdmin.setForeground(new Color(0, 0, 0));
+		lblAdmin.setForeground(new Color(255, 255, 255));
 		lblAdmin.setFont(new Font("Century Gothic", Font.BOLD, 15));
 		lblAdmin.setBounds(401, 288, 68, 18);
 		contentPane.add(lblAdmin);

@@ -32,6 +32,16 @@ import javax.swing.JPopupMenu;
 import java.awt.Component;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.border.LineBorder;
+import javax.swing.border.TitledBorder;
+import javax.swing.border.MatteBorder;
+import javax.swing.border.BevelBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JScrollBar;
+import java.awt.ScrollPane;
+import java.awt.Scrollbar;
+import java.awt.Dimension;
+import java.awt.Toolkit;
 
 public class Payrolls {
 
@@ -106,206 +116,282 @@ public class Payrolls {
 					txtEmployeeNo.setText(sRef);
 			}
 		});
-		getFrame().setBounds(0, 0, 1288, 750);
+		getFrame().setBounds(0, 0, 1271, 694);
 		getFrame().setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		getFrame().getContentPane().setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Employee Ref No.:");
-		lblNewLabel.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel.setBounds(28, 210, 179, 33);
+		JLabel lblNewLabel = new JLabel("Employee Ref No. :");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.LEFT);
+		lblNewLabel.setForeground(Color.WHITE);
+		lblNewLabel.setFont(new Font("Century Gothic", Font.PLAIN, 17));
+		lblNewLabel.setBounds(47, 180, 179, 33);
 		getFrame().getContentPane().add(lblNewLabel);
 		
 		JLabel lblEmployeeName = new JLabel("Employee Name:");
-		lblEmployeeName.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblEmployeeName.setBounds(28, 254, 179, 33);
+		lblEmployeeName.setHorizontalAlignment(SwingConstants.LEFT);
+		lblEmployeeName.setForeground(Color.WHITE);
+		lblEmployeeName.setFont(new Font("Century Gothic", Font.PLAIN, 17));
+		lblEmployeeName.setBounds(47, 219, 179, 33);
 		getFrame().getContentPane().add(lblEmployeeName);
 		
-		JLabel lblPostCode = new JLabel("Post Code:");
-		lblPostCode.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblPostCode.setBounds(28, 331, 179, 33);
-		getFrame().getContentPane().add(lblPostCode);
-		
 		JLabel lblEmployeeAddress = new JLabel("Employee Add:");
-		lblEmployeeAddress.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblEmployeeAddress.setBounds(28, 296, 179, 33);
+		lblEmployeeAddress.setHorizontalAlignment(SwingConstants.LEFT);
+		lblEmployeeAddress.setForeground(Color.WHITE);
+		lblEmployeeAddress.setFont(new Font("Century Gothic", Font.PLAIN, 17));
+		lblEmployeeAddress.setBounds(47, 261, 179, 33);
 		getFrame().getContentPane().add(lblEmployeeAddress);
 		
+		JLabel lblPostCode = new JLabel("Post Code:");
+		lblPostCode.setHorizontalAlignment(SwingConstants.LEFT);
+		lblPostCode.setForeground(Color.WHITE);
+		lblPostCode.setFont(new Font("Century Gothic", Font.PLAIN, 17));
+		lblPostCode.setBounds(47, 297, 179, 33);
+		getFrame().getContentPane().add(lblPostCode);
+		
 		txtEmployeeNo = new JTextField();
-		txtEmployeeNo.setFont(new Font("Tahoma", Font.BOLD, 18));
-		txtEmployeeNo.setBounds(217, 220, 222, 28);
+		txtEmployeeNo.setForeground(Color.WHITE);
+		txtEmployeeNo.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		txtEmployeeNo.setBounds(217, 183, 222, 28);
 		getFrame().getContentPane().add(txtEmployeeNo);
+
+		txtEmployeeNo.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtEmployeeNo.setOpaque(false);
 		txtEmployeeNo.setColumns(10);
 		
 		txtEmployeeName = new JTextField();
-		txtEmployeeName.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtEmployeeName.setForeground(Color.WHITE);
+		txtEmployeeName.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtEmployeeName.setColumns(10);
-		txtEmployeeName.setBounds(217, 257, 222, 28);
+		txtEmployeeName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtEmployeeName.setOpaque(false);
+		txtEmployeeName.setBounds(217, 222, 222, 28);
 		getFrame().getContentPane().add(txtEmployeeName);
 		
 		txtPostCode = new JTextField();
-		txtPostCode.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtPostCode.setForeground(Color.WHITE);
+		txtPostCode.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtPostCode.setColumns(10);
-		txtPostCode.setBounds(217, 333, 222, 28);
+		txtPostCode.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtPostCode.setOpaque(false);
+		txtPostCode.setBounds(217, 300, 222, 28);
 		getFrame().getContentPane().add(txtPostCode);
 		
 		txtEmployeeAddress = new JTextField();
-		txtEmployeeAddress.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtEmployeeAddress.setForeground(Color.WHITE);
+		txtEmployeeAddress.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtEmployeeAddress.setColumns(10);
-		txtEmployeeAddress.setBounds(217, 296, 222, 28);
+		txtEmployeeAddress.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtEmployeeAddress.setOpaque(false);
+		txtEmployeeAddress.setBounds(217, 261, 222, 28);
 		getFrame().getContentPane().add(txtEmployeeAddress);
 		
 		JLabel lblBasicSalary = new JLabel("Basic Salary:");
-		lblBasicSalary.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblBasicSalary.setBounds(28, 402, 179, 33);
+		lblBasicSalary.setForeground(Color.WHITE);
+		lblBasicSalary.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblBasicSalary.setBounds(47, 370, 129, 33);
 		getFrame().getContentPane().add(lblBasicSalary);
 		
 		JLabel lblMealAllowance = new JLabel("Meal Allowance:");
-		lblMealAllowance.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblMealAllowance.setBounds(28, 440, 179, 33);
+		lblMealAllowance.setForeground(Color.WHITE);
+		lblMealAllowance.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblMealAllowance.setBounds(47, 409, 179, 33);
 		getFrame().getContentPane().add(lblMealAllowance);
 		
 		JLabel lblNewLabel_1_2 = new JLabel("Over Time:");
-		lblNewLabel_1_2.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_2.setBounds(28, 481, 179, 33);
+		lblNewLabel_1_2.setForeground(Color.WHITE);
+		lblNewLabel_1_2.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_2.setBounds(47, 448, 179, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_2);
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Gross Pay:");
-		lblNewLabel_1_3.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_3.setBounds(28, 550, 179, 33);
+		lblNewLabel_1_3.setForeground(Color.WHITE);
+		lblNewLabel_1_3.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_3.setBounds(47, 510, 179, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_3);
 		
 		JLabel lblNewLabel_1_2_1 = new JLabel("Net Pay:");
-		lblNewLabel_1_2_1.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_2_1.setBounds(28, 629, 179, 33);
+		lblNewLabel_1_2_1.setForeground(Color.WHITE);
+		lblNewLabel_1_2_1.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_2_1.setBounds(47, 550, 179, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_2_1);
 		
 		txtBasicSalary = new JTextField();
-		txtBasicSalary.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtBasicSalary.setForeground(Color.WHITE);
+		txtBasicSalary.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtBasicSalary.setColumns(10);
-		txtBasicSalary.setBounds(217, 410, 222, 28);
+		txtBasicSalary.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtBasicSalary.setOpaque(false);
+		txtBasicSalary.setBounds(217, 374, 222, 28);
 		getFrame().getContentPane().add(txtBasicSalary);
 		
 		txtMealAllowance = new JTextField();
-		txtMealAllowance.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtMealAllowance.setForeground(Color.WHITE);
+		txtMealAllowance.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtMealAllowance.setColumns(10);
-		txtMealAllowance.setBounds(217, 449, 222, 28);
+		txtMealAllowance.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtMealAllowance.setOpaque(false);
+		txtMealAllowance.setBounds(217, 413, 222, 28);
 		getFrame().getContentPane().add(txtMealAllowance);
 		
 		txtOT = new JTextField();
-		txtOT.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtOT.setForeground(Color.WHITE);
+		txtOT.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtOT.setColumns(10);
-		txtOT.setBounds(217, 488, 222, 28);
+		txtOT.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtOT.setOpaque(false);
+		txtOT.setBounds(217, 452, 222, 28);
 		getFrame().getContentPane().add(txtOT);
 		
 		txtGrossPay = new JTextField();
-		txtGrossPay.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtGrossPay.setForeground(Color.WHITE);
+		txtGrossPay.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtGrossPay.setColumns(10);
-		txtGrossPay.setBounds(217, 550, 222, 28);
+		txtGrossPay.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtGrossPay.setOpaque(false);
+		txtGrossPay.setBounds(217, 514, 222, 28);
 		getFrame().getContentPane().add(txtGrossPay);
 		
 		txtNetPay = new JTextField();
-		txtNetPay.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtNetPay.setForeground(Color.WHITE);
+		txtNetPay.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtNetPay.setColumns(10);
-		txtNetPay.setBounds(217, 626, 222, 28);
+		txtNetPay.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtNetPay.setOpaque(false);
+		txtNetPay.setBounds(217, 554, 222, 28);
 		getFrame().getContentPane().add(txtNetPay);
 		
 		JLabel lblNewLabel_1 = new JLabel("Pay Date:");
-		lblNewLabel_1.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(474, 181, 140, 33);
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setFont(new Font("Eras Demi ITC", Font.BOLD, 20));
+		lblNewLabel_1.setBounds(488, 116, 289, 33);
 		getFrame().getContentPane().add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_1_4 = new JLabel("Tax Period:");
-		lblNewLabel_1_4.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_4.setBounds(474, 257, 140, 33);
+		lblNewLabel_1_4.setForeground(Color.WHITE);
+		lblNewLabel_1_4.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_4.setBounds(484, 179, 107, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_4);
 		
 		JLabel lblNewLabel_1_5 = new JLabel("Tax Code:");
-		lblNewLabel_1_5.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_5.setBounds(474, 292, 140, 33);
+		lblNewLabel_1_5.setForeground(Color.WHITE);
+		lblNewLabel_1_5.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_5.setBounds(488, 218, 107, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_5);
 		
 		JLabel lblNewLabel_1_4_1 = new JLabel("SSS Code:");
-		lblNewLabel_1_4_1.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_4_1.setBounds(474, 331, 140, 33);
+		lblNewLabel_1_4_1.setForeground(Color.WHITE);
+		lblNewLabel_1_4_1.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_4_1.setBounds(488, 257, 107, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_4_1);
 		
 		JLabel lblNewLabel_1_5_1 = new JLabel("SSS Number:");
-		lblNewLabel_1_5_1.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_5_1.setBounds(474, 380, 140, 33);
+		lblNewLabel_1_5_1.setForeground(Color.WHITE);
+		lblNewLabel_1_5_1.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_5_1.setBounds(488, 357, 129, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_5_1);
 		
 		JLabel lblNewLabel_1_4_2 = new JLabel("Tax:");
-		lblNewLabel_1_4_2.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_4_2.setBounds(474, 434, 92, 33);
+		lblNewLabel_1_4_2.setForeground(Color.WHITE);
+		lblNewLabel_1_4_2.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_4_2.setBounds(488, 448, 115, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_4_2);
 		
 		JLabel lblNewLabel_1_4_1_1 = new JLabel("Loan:");
-		lblNewLabel_1_4_1_1.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_4_1_1.setBounds(474, 514, 118, 33);
+		lblNewLabel_1_4_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_4_1_1.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_4_1_1.setBounds(488, 510, 111, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_4_1_1);
 		
 		JLabel lblNewLabel_1_5_1_1 = new JLabel("SSS Contribution:");
-		lblNewLabel_1_5_1_1.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_5_1_1.setBounds(445, 567, 179, 33);
+		lblNewLabel_1_5_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_5_1_1.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_5_1_1.setBounds(457, 401, 162, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_5_1_1);
 		
 		JLabel lblNewLabel_1_5_1_1_1 = new JLabel("Deductions:");
-		lblNewLabel_1_5_1_1_1.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_1_5_1_1_1.setBounds(474, 629, 129, 33);
+		lblNewLabel_1_5_1_1_1.setForeground(Color.WHITE);
+		lblNewLabel_1_5_1_1_1.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		lblNewLabel_1_5_1_1_1.setBounds(488, 550, 129, 33);
 		getFrame().getContentPane().add(lblNewLabel_1_5_1_1_1);
 		
 		JComboBox<?> cmbTaxPeriod = new JComboBox();
-		cmbTaxPeriod.setFont(new Font("Tahoma", Font.BOLD, 18));
+		cmbTaxPeriod.setForeground(Color.BLACK);
+		cmbTaxPeriod.setOpaque(false);
+		cmbTaxPeriod.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		cmbTaxPeriod.setModel(new DefaultComboBoxModel(new String[] {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"}));
-		cmbTaxPeriod.setBounds(615, 257, 148, 31);
+		cmbTaxPeriod.setBounds(629, 180, 148, 31);
 		getFrame().getContentPane().add(cmbTaxPeriod);
 		
 		JComboBox cmbTaxCode = new JComboBox();
-		cmbTaxCode.setFont(new Font("Tahoma", Font.BOLD, 18));
+		cmbTaxCode.setForeground(Color.BLACK);
+		cmbTaxCode.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		cmbTaxCode.setModel(new DefaultComboBoxModel(new String[] {"A", "B", "C", "D", "E", "F", "G"}));
-		cmbTaxCode.setBounds(615, 296, 148, 31);
+		cmbTaxCode.setBounds(629, 219, 148, 31);
 		getFrame().getContentPane().add(cmbTaxCode);
 		
 		JComboBox cmbNICode = new JComboBox();
-		cmbNICode.setFont(new Font("Tahoma", Font.BOLD, 18));
+		cmbNICode.setForeground(Color.BLACK);
+		cmbNICode.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		cmbNICode.setModel(new DefaultComboBoxModel(new String[] {"A0000", "A3000", "B4000", "C5000", "D6000", "E7000", "F8000", "G9000"}));
-		cmbNICode.setBounds(615, 333, 148, 31);
+		cmbNICode.setBounds(629, 258, 148, 31);
 		getFrame().getContentPane().add(cmbNICode);
 		
 		txtSSSNumber = new JTextField();
-		txtSSSNumber.setFont(new Font("Tahoma", Font.BOLD, 18));
-		txtSSSNumber.setBounds(615, 382, 148, 28);
+		txtSSSNumber.setForeground(Color.WHITE);
+		txtSSSNumber.setFont(new Font("Century Gothic", Font.PLAIN, 18));
+		txtSSSNumber.setBounds(629, 361, 148, 28);
 		getFrame().getContentPane().add(txtSSSNumber);
+		txtSSSNumber.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtSSSNumber.setOpaque(false);
 		txtSSSNumber.setColumns(10);
 		
 		txtTax = new JTextField();
-		txtTax.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtTax.setForeground(Color.WHITE);
+		txtTax.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtTax.setColumns(10);
-		txtTax.setBounds(615, 439, 148, 28);
+		txtTax.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtTax.setOpaque(false);
+		txtTax.setBounds(629, 452, 148, 28);
 		getFrame().getContentPane().add(txtTax);
 		
 		txtSSSContri = new JTextField();
-		txtSSSContri.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtSSSContri.setForeground(Color.WHITE);
+		txtSSSContri.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtSSSContri.setColumns(10);
-		txtSSSContri.setBounds(615, 567, 148, 28);
+		txtSSSContri.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtSSSContri.setOpaque(false);
+		txtSSSContri.setBounds(629, 401, 148, 28);
 		getFrame().getContentPane().add(txtSSSContri);
 		
 		txtLoan = new JTextField();
-		txtLoan.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtLoan.setForeground(Color.WHITE);
+		txtLoan.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtLoan.setColumns(10);
-		txtLoan.setBounds(615, 516, 148, 28);
+		txtLoan.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtLoan.setOpaque(false);
+		txtLoan.setBounds(629, 514, 148, 28);
 		getFrame().getContentPane().add(txtLoan);
 		
 		txtDeductions = new JTextField();
-		txtDeductions.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtDeductions.setForeground(Color.WHITE);
+		txtDeductions.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtDeductions.setColumns(10);
-		txtDeductions.setBounds(615, 634, 148, 28);
+		txtDeductions.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtDeductions.setOpaque(false);
+		txtDeductions.setBounds(629, 554, 148, 28);
 		getFrame().getContentPane().add(txtDeductions);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(823, 150, 388, 355);
+		frame.getContentPane().add(scrollPane);
+		
 		JTextArea rtfPaySlip = new JTextArea();
+		scrollPane.setViewportView(rtfPaySlip);
+		rtfPaySlip.setForeground(Color.BLACK);
 		rtfPaySlip.setFont(new Font("Courier New", Font.PLAIN, 18));
-		rtfPaySlip.setBounds(871, 237, 388, 296);
-		getFrame().getContentPane().add(rtfPaySlip);
+
+		rtfPaySlip.setBorder(new BevelBorder(BevelBorder.RAISED, new Color(255, 255, 255), new Color(255, 255, 255), new Color(255, 255, 255), new Color(255, 255, 255)));
+		rtfPaySlip.setOpaque(false);
 		
 		JButton btnNewButton = new JButton("Net Wages");
 		btnNewButton.setFont(new Font("Stencil", Font.PLAIN, 18));
@@ -691,10 +777,12 @@ public class Payrolls {
 				txtOT.setText(sOT);
 			}
 		});
-		btnNewButton.setBounds(926, 564, 140, 33);
+		btnNewButton.setBounds(878, 531, 140, 33);
 		getFrame().getContentPane().add(btnNewButton);
 		
 		JButton btnPaySlip = new JButton("Pay Slip");
+		btnPaySlip.setBackground(Color.WHITE);
+		btnPaySlip.setOpaque(false);
 		btnPaySlip.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String paydate = txtPayDate.getText();
@@ -745,7 +833,7 @@ public class Payrolls {
 		});
 		
 		btnPaySlip.setFont(new Font("Stencil", Font.PLAIN, 18));
-		btnPaySlip.setBounds(1097, 564, 140, 33);
+		btnPaySlip.setBounds(1049, 531, 140, 33);
 		getFrame().getContentPane().add(btnPaySlip);
 		
 		JButton btnReset = new JButton("Reset");
@@ -775,7 +863,7 @@ public class Payrolls {
 	
 		
 		btnReset.setFont(new Font("Stencil", Font.PLAIN, 18));
-		btnReset.setBounds(926, 608, 140, 33);
+		btnReset.setBounds(878, 575, 140, 33);
 		getFrame().getContentPane().add(btnReset);
 		
 		JButton btnNewButton_1_1 = new JButton("Exit");
@@ -792,44 +880,64 @@ public class Payrolls {
 			}
 		});
 		btnNewButton_1_1.setFont(new Font("Stencil", Font.PLAIN, 18));
-		btnNewButton_1_1.setBounds(1097, 608, 140, 33);
+		btnNewButton_1_1.setBounds(1049, 575, 140, 33);
 		getFrame().getContentPane().add(btnNewButton_1_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Pay Slip:");
-		lblNewLabel_2.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblNewLabel_2.setBounds(871, 172, 155, 51);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		lblNewLabel_2.setFont(new Font("Century Gothic", Font.BOLD, 20));
+		lblNewLabel_2.setBounds(823, 106, 155, 51);
 		getFrame().getContentPane().add(lblNewLabel_2);
 		
-		JLabel lblEmployersName = new JLabel("Employer's Name:");
-		lblEmployersName.setFont(new Font("Stencil", Font.PLAIN, 18));
-		lblEmployersName.setBounds(28, 171, 179, 33);
+		JLabel lblEmployersName = new JLabel("Employer's Name :");
+		lblEmployersName.setHorizontalAlignment(SwingConstants.LEFT);
+		lblEmployersName.setForeground(Color.WHITE);
+		lblEmployersName.setFont(new Font("Century Gothic", Font.PLAIN, 17));
+		lblEmployersName.setBounds(47, 139, 179, 33);
 		getFrame().getContentPane().add(lblEmployersName);
 		
 		txtEmployerName = new JTextField();
-		txtEmployerName.setFont(new Font("Tahoma", Font.BOLD, 18));
+		txtEmployerName.setForeground(Color.WHITE);
+		txtEmployerName.setFont(new Font("Century Gothic", Font.PLAIN, 18));
 		txtEmployerName.setColumns(10);
-		txtEmployerName.setBounds(217, 181, 222, 28);
+		txtEmployerName.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtEmployerName.setOpaque(false);
+		txtEmployerName.setBounds(217, 143, 222, 28);
 		getFrame().getContentPane().add(txtEmployerName);
 		
 		txtPayDate = new JTextField();
 		txtPayDate.setFont(new Font("Tahoma", Font.BOLD, 18));
 		txtPayDate.setColumns(10);
-		txtPayDate.setBounds(615, 186, 148, 28);
+		txtPayDate.setBorder(new MatteBorder(0, 0, 1, 0, (Color) Color.WHITE));
+		txtPayDate.setOpaque(false);
+		txtPayDate.setBounds(615, 120, 148, 28);
 		getFrame().getContentPane().add(txtPayDate);
 		
-		JLabel lblNewLabel_3 = new JLabel("Group4 Payroll Management System");
-		lblNewLabel_3.setForeground(Color.RED);
+		JLabel lblNewLabel_3 = new JLabel("Payroll Management System");
+		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setFont(new Font("Stencil", Font.BOLD, 40));
-		lblNewLabel_3.setBounds(299, 30, 1045, 98);
+		lblNewLabel_3.setBounds(371, 7, 1045, 98);
 		getFrame().getContentPane().add(lblNewLabel_3);
 		
 		JLabel lblNewLabel_4 = new JLabel("");
 		lblNewLabel_4.setIcon(new ImageIcon("C:\\reg.jpg"));
-		lblNewLabel_4.setBounds(37, 11, 170, 149);
+		lblNewLabel_4.setBounds(37, 0, 170, 149);
 		getFrame().getContentPane().add(lblNewLabel_4);
 		
 		JPopupMenu popupMenu = new JPopupMenu();
 		addPopup(lblNewLabel_4, popupMenu);
+		
+		JLabel lblNewLabel_7 = new JLabel("Employees' Information");
+		lblNewLabel_7.setFont(new Font("Eras Bold ITC", Font.PLAIN, 18));
+		lblNewLabel_7.setForeground(Color.WHITE);
+		lblNewLabel_7.setVerifyInputWhenFocusTarget(false);
+		lblNewLabel_7.setBounds(54, 109, 301, 22);
+		frame.getContentPane().add(lblNewLabel_7);
+		
+		JLabel lblNewLabel_5 = new JLabel("New label");
+		lblNewLabel_5.setIcon(new ImageIcon("C:\\Users\\CLIENT\\git\\payroll\\src\\Pms\\img\\MainB.png"));
+		lblNewLabel_5.setBounds(0, -12, 1262, 668);
+		frame.getContentPane().add(lblNewLabel_5);
 		
 		
 	}
@@ -840,6 +948,7 @@ public class Payrolls {
 
 	public void setFrame(JFrame frame) {
 		this.frame = frame;
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage(Payrolls.class.getResource("/Pms/img/g4LogoS.png")));
 	}
 	private static void addPopup(Component component, final JPopupMenu popup) {
 		component.addMouseListener(new MouseAdapter() {
